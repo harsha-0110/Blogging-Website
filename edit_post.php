@@ -78,7 +78,7 @@ include_once("header.php");
         <label>Title</label>
         <input type="text" name="title" value="<?php echo $title; ?>" required><br><br>
         <label for="description">Description:</label>
-        <input type="text" name="description" id="description" value="<?php echo $description; ?>" required><br><br>
+        <textarea name="description" id="description" require><?php echo $description; ?></textarea><br><br>
         <label>Content</label>
         <textarea name="content" id="content" required><?php echo $content; ?></textarea>
 
