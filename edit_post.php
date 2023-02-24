@@ -9,7 +9,6 @@ if (!isset($_SESSION["username"])) {
 
 // Connect to the database
 include_once("dbconnect.php");
-include_once("header.php");
 
 // Check if the connection was successful
 if (!$conn) {
@@ -72,7 +71,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 // Close the database connection
 mysqli_close($conn);
 ?>
-
+<?php
+include_once("header.php");
+?>
     <form method="post" style="width: 100%; padding: 30px">
         <label>Title</label>
         <input type="text" name="title" value="<?php echo $title; ?>" required><br><br>
