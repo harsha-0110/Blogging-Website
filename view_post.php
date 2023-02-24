@@ -1,8 +1,8 @@
 <?php
+session_start();
 // Establish a database connection
 include_once("dbconnect.php");
-include_once("header.php");
-session_start();
+
 $post_id = $_GET['id'];
 if(!isset($_SESSION["username"])){
     header("Location: index.php");
@@ -25,7 +25,9 @@ if(isset($_POST["comment"])){
     }
 }
 ?>
-
+<?php
+include_once("header.php");
+?>
     <div class="w3-panel w3-sand w3-card-4">
     <?php 
         echo "<h3>Description:</h3>";
