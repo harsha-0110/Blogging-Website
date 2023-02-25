@@ -34,7 +34,7 @@
             echo '<div class="w3-panel w3-sand w3-card-4">';
             echo "<h3>" . $row["title"] . "</h3>";
             echo "<h3>Description:</h3>";
-            echo $row["description"];
+            echo "<p style='text-align: justify;'>" . $row["description"] . "</p>";
             echo "<br>";
             echo "<h3>Content:</h3>";
             echo "<p>" . $row["content"] . "</p>";
