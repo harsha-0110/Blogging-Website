@@ -84,5 +84,4 @@ include_once("header.php");
 
         <button class="w3-btn w3-teal w3-round" type="submit">Save Changes</button>
     </form>
-</body>
-</html>
+<?php include_once("footer.php");?>
