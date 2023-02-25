@@ -65,5 +65,4 @@ if(isset($_POST["login"])){
         <input type="password" name="password" placeholder="Password"><br>
         <input class="w3-btn w3-teal w3-round" type="submit" name="signup" value="Signup">
     </form>
-</body>
-</html>
+<?php include_once("footer.php");?>

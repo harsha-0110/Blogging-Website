@@ -49,5 +49,4 @@
     // Close the database connection
     mysqli_close($conn);
 ?>
-    </body>
-</html>
+<?php include_once("footer.php");?>
