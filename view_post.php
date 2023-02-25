@@ -31,7 +31,7 @@ include_once("header.php");
     <div class="w3-panel w3-sand w3-card-4">
     <?php 
         echo "<h3>Description:</h3>";
-        echo $row["description"];
+        echo "<p style='text-align: justify;'>" . $row["description"] . "</p>";
         echo "<br><br>";
         echo "<h3>Content:</h3>";
         echo $row["content"];
