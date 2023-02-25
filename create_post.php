@@ -30,5 +30,4 @@ if(isset($_POST["create_post"])){
     <textarea name="content" id="content"></textarea><br><br>
     <button class="w3-btn w3-teal w3-round" type="submit" name="create_post">Create Post</button>
   </form>
-</body>
-</html>
+<?php include_once("footer.php");?>
