@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Tutorial</title>
+      <style>
+        div{
+          height:500px;
+          width:300px;
+          overflow: scroll;
+        }
+      </style>
+    </head>
+    <body>
+      <form action="/HTML/test.html" method="POST" onsubmit="return validate()">
+        <table>
+         <tr><th colspan="2">Registration Form</th></tr>
+         <tr><td><label for="username">Enter your Username</label></td><td><input type="text" name="username" id="username" required></td><td><label for="error" id="err1"></label></td></tr>
+         <tr><td><label for="password">Enter your Password</label></td><td><input type="text" name="password" id="password" required></td><td><label for="error" id="err2"></label></td></tr>
+         <tr><td><label for="cpassword">Re Enter your Password</label></td><td><input type="text" name="cpass" id="cpass" required></td><td><label for="error" id="err3"></label></td></tr>
+         <tr><td><input type="submit" name="submit" id="submit" value="Submit" ></td><td><input type="reset"</td><td><label for="error" id="err3"></label></td></tr>
+        </table>
+      </form>
+    <script>
+      function validate()
+      {
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+        const confirm_password = document.getElementById("cpass").value;
+        if(username.trim().length==0)
+        {
+          document.getElementById("err1").textContent="Check username";
+          document.getElementById("username").style.border="2px solid red";
+          return false;
+        }
+        if(password.length<10)
+        {
+          document.getElementById("err2").textContent="Password should be minimum 10 characters in length";
+          document.getElementById("password").style.border="2px solid red";
+          return false;
+        }
+        if(password.localeCompare(confirm_password)!=0)
+        {
+          document.getElementById("err2").textContent="Passwords are not matching";
+          document.getElementById("password").style.border="2px solid red";
+          document.getElementById("cpass").style.border="2px solid red";
+          return false;
+        }
+        document.write("Validations Successful")
+        return true;
+      }    
+    </script>
+    </body>
+    </html>
