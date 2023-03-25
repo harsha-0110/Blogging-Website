@@ -54,11 +54,11 @@
             const pattern = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{8,}/
             if(password.match(pattern))
             {
-              document.write("password is valid");
+              document.getElementById("err2")="password is valid";
             }
             else
             {
-            document.write("Password is not valid");
+             document.getElementById("err2")="Password is not valid";
             }
       }    
     </script>
