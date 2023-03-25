@@ -50,6 +50,16 @@
         }
         document.write("Validations Successful")
         return true;
+          
+            const pattern = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{8,}/
+            if(password.match(pattern))
+            {
+              document.write("password is valid");
+            }
+            else
+            {
+            document.write("Password is not valid");
+            }
       }    
     </script>
     </body>
