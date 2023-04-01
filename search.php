@@ -5,7 +5,6 @@ include_once("header.php");
 
 if (isset($_GET['q'])) {
     $q = mysqli_real_escape_string($conn, $_GET['q']);
-
     $sql = "SELECT * FROM posts WHERE title LIKE '%{$q}%' OR description LIKE '%{$q}%'";
     $result = mysqli_query($conn, $sql);
 
@@ -13,7 +12,7 @@ if (isset($_GET['q'])) {
         echo "Nothing found.";
     } else {
 
-      echo "<div class='w3-container w3-padding'>Showing results for $q</div>";
+      echo "<div class='w3-container'>Showing results for $q</div>";
 
       while ($row = mysqli_fetch_assoc($result)) {
         echo "<div class='w3-panel w3-sand w3-card-4' style='padding: 20px'>";
@@ -34,3 +33,4 @@ if (isset($_GET['q'])) {
     }
 }
 include("footer.php");
+?>

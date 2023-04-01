@@ -17,8 +17,9 @@ include_once("like.php");
 if(isset($_POST["comment"])){
     $post_id = $_POST["post_id"];
     $comment = $_POST["comment"];
+    $username = $_SESSION["username"];
 
-    $sql = "INSERT INTO comments (post_id, comment) VALUES ($post_id, '$comment')";
+    $sql = "INSERT INTO comments (post_id, comment, username) VALUES ($post_id, '$comment', '$username')";
     $result = mysqli_query($conn, $sql);
 
     if(!$result){
@@ -59,7 +60,7 @@ if(isset($_POST["comment"])){
             $sql_comments = "SELECT * FROM comments WHERE post_id = $post_id";
             $result_comments = mysqli_query($conn, $sql_comments);
             while($row_comments = mysqli_fetch_assoc($result_comments)){
-                echo "<p>".$row_comments["comment"]."</p>";
+                echo "<p>".$row_comments["username"].": ".$row_comments["comment"]."</p>";
             }
         ?>
         <form method="post">

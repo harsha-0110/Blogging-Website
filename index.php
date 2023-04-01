@@ -50,8 +50,12 @@ if(isset($_POST["login"])){
     <div class="w3-container w3-teal">
         <h1>Bloggit</h1>
     </div>
-    <h2>Login</h2>
-    <form method="post" style="margin: auto; border: 1px solid grey; width: 75%; padding: 10px; border-radius: 5px">
+    <div class="w3-bar w3-teal">
+        <a href='home.php' class='w3-bar-item w3-button w3-mobile' style='margin-top: 1.5px'>Home</a>
+        <a href='index.php' class='w3-bar-item w3-button w3-mobile' style='margin-top: 1.5px'>Login</a>
+</div>
+    <h2>Login: </h2>
+    <form method="post" id="login-box">
         <input type="text" name="username" placeholder="Username"><br>
         <input type="password" name="password" placeholder="Password"><br>
         <input class="w3-btn w3-teal w3-round" type="submit" name="login" value="Login">
@@ -59,8 +63,8 @@ if(isset($_POST["login"])){
     <div>
         <?php echo $msg; ?>
     </div>
-    <h2>Signup</h2>
-    <form method="post" style="margin: auto; border: 1px solid grey; width: 75%; padding: 10px; border-radius: 5px">
+    <h2>Signup: </h2>
+    <form method="post" id="signup-box">
         <input type="email" name="email" placeholder="Email"><br>
         <input type="text" name="username" placeholder="Username"><br>
         <input type="password" name="password" placeholder="Password"><br>

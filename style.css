@@ -67,3 +67,13 @@
 	max-width: 100%;
 	height: auto;
   }
+  
+  #login-box, #signup-box{
+	margin: auto; 
+	border: 2px solid grey; 
+	max-width: 400px; 
+	padding: 20px; 
+	border-radius: 10px;
+	-webkit-backdrop-filter: blur(15px);
+	backdrop-filter: blur(15px);
+  }
