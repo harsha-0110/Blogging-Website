@@ -26,6 +26,7 @@
       echo "<a href='home.php' class='w3-bar-item w3-button w3-mobile' style='margin-top: 1.5px'>Home</a>";
       echo "<a href='create_post.php' class='w3-bar-item w3-button w3-mobile' style='margin-top: 1.5px'>Create Post</a>";
       echo "<a href='manage_posts.php' class='w3-bar-item w3-button w3-mobile' style='margin-top: 1.5px'>Manage Posts</a>";
+      echo "<a href='profile.php' class='w3-bar-item w3-button w3-mobile' style='margin-top: 1.5px'>Profile</a>";
       echo "<a href='logout.php' class='w3-bar-item w3-button w3-mobile' style='margin-top: 1.5px'>Logout</a>";
       $current_page = basename($_SERVER['PHP_SELF']);
       if ($current_page === 'home.php') {
