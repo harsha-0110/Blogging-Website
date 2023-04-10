@@ -29,17 +29,23 @@ if(isset($_POST["comment"])){
 ?>
 
     <div class="w3-panel w3-sand w3-card-4">
-        <?php 
-            echo "<h3>Description:</h3>";
-            echo "<p style='text-align: justify;'>" . $row["description"] . "</p>";
-            echo "<br><br>";
-            echo "<h3>Content:</h3>";
+        <?php
+            $auth_id = $row["author"];
+            $sql = "SELECT * FROM users WHERE id = $auth_id";
+            $res = mysqli_query($conn, $sql);
+            if ($result === false) {
+                echo "Error: Query execution failed";
+            } 
+            else {
+                $res1 = mysqli_fetch_assoc($res);
+                $username = $res1["username"];
+            }
+            echo "<h3 style='font-weight: bold; text-align: center;'>" . $row["title"] . "</h3>";
             echo $row["content"];
             echo "<br><br>";
-            echo "<p>Author ID: " . $row["author"] . "</p>";
+            echo "<p>Author: " . $username . "</p>";
             echo "Created At: " . $row["created_at"];
         ?>
-        
         
         <?php
         if ($liked) {

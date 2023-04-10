@@ -4,7 +4,7 @@ session_start();
 
 // Check if the user is logged in
 if (!isset($_SESSION['username'])) {
-    header('Location: login.php');
+    header('Location: index.php');
     exit();
 }
 
@@ -50,7 +50,7 @@ include_once 'header.php';
 ?>
 
     <h1>Your Profile:</h1>
-    <form method="post">
+    <form method="post" id="profile">
         <label>Name:</label>
         <input type="text" name="name" value="<?php echo $user['name']; ?>" <?php echo isset($_POST['edit']) ? '' : 'readonly'; ?>><br>
 
@@ -61,7 +61,7 @@ include_once 'header.php';
         <input type="text" name="phone_number" value="<?php echo $user['phone_number']; ?>" <?php echo isset($_POST['edit']) ? '' : 'readonly'; ?>><br>
 
         <label>Date of birth:</label>
-        <input type="date" name="dob" value="<?php echo $user['dob']; ?>" <?php echo isset($_POST['edit']) ? '' : 'readonly'; ?>><br>
+        <input type="date" name="dob" value="<?php echo $user['dob']; ?>" <?php echo isset($_POST['edit']) ? '' : 'readonly'; ?>><br><br>
 
         <label>Bio:</label>
         <textarea name="bio" <?php echo isset($_POST['edit']) ? '' : 'readonly'; ?>><?php echo $user['bio']; ?></textarea><br>

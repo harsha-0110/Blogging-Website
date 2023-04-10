@@ -1,79 +1,119 @@
-/* Reset styles */
-* {
+*{
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-  }
-  
-  /* Body styles */
-  body {
-	font-family: Arial, sans-serif;
-	background-color: #f2f2f2;
-  }
+}
+#heading {
+  display: flex;
+  align-items: center;
+}
 
-  input[type="email"],
-  input[type="text"],
-  input[type="password"]{
-	display: block;
-	width: 100%;
-	margin-bottom: 20px;
-	padding: 10px;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	font-size: 16px;
+@media (max-width: 768px) {
+  #menu-bar {
+    height: 0;
   }
-  
-  button,
-  input[type="submit"] {
-	margin: 2px;
-	background-color: #333;
-	color: #fff;
-	cursor: pointer;
+  #menu-button {
+    display: block;
   }
-  
-  button,
-  input[type="submit"]:hover {
-	background-color: #444;
-  }
-  
-  /* Form headings styles */
-  h2 {
-	margin-top: 40px;
-	font-size: 24px;
-	font-weight: bolder;
-  }
+}
 
-  .post-box{
+@media (min-width: 768px) {
+  #menu-bar {
+    height: auto;
+  }
+  #menu-button {
+    display: none;
+  }
+}
+
+#menu-bar.show {
+  height: auto;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+}
+
+input[type="email"],
+input[type="text"],
+input[type="password"] {
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+button,
+input[type="submit"] {
+  margin: 2px;
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+}
+
+button,
+input[type="submit"]:hover {
+  background-color: #444;
+}
+
+h2 {
+  margin-top: 40px;
+  font-size: 24px;
+  font-weight: bolder;
+}
+
+textarea {
+  margin-bottom: 20px;
+  width: 100%;
+  height: 100px;
+  resize: none;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+#login-box,
+#signup-box {
+  margin: auto;
+  border: 3px solid teal;
+  max-width: 450px;
+  padding: 20px;
+  border-radius: 7px;
+}
+
+.post-box{
 	margin: 30px;
 	padding: 20px;
 	border: 3px solid grey;
 	border-radius: 10px;
 	background-color: bisque;
-  }
+}
 
-  textarea{
-	margin-bottom: 20px;
-	width: 100%;
-	height: 100px;
-	resize: none;
-	padding: 10px;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	font-size: 16px;
-  }
+#signup-box {
+  display: none;
+}
 
-  img{
-	display: block;
-	max-width: 100%;
-	height: auto;
-  }
-  
-  #login-box, #signup-box{
-	margin: auto; 
-	border: 2px solid grey; 
-	max-width: 400px; 
-	padding: 20px; 
-	border-radius: 10px;
-	-webkit-backdrop-filter: blur(15px);
-	backdrop-filter: blur(15px);
-  }
+#login-button {
+  display: none;
+  text-align: center;
+}
+
+#signup-button {
+  display: block;
+  text-align: center;
+}
+
+#profile {
+  margin: 20px;
+}

@@ -15,30 +15,35 @@
       toolbar: 'undo redo | bold italic underline | alignleft aligncenter alignright | image link',
       height: 400
     });
+    function toggleMenu() {
+      var menuBar = document.querySelector('#menu-bar');
+      menuBar.classList.toggle('show');
+    }
   </script>
 </head>
 <body>
-  <div class="w3-container w3-center w3-teal">
+  <div class="w3-container w3-teal" id="heading">
+    <button class="w3-teal w3-button" id="menu-button" onclick="toggleMenu()"><i class="fa fa-bars"></i></button>
     <h1>Bloggit</h1>
   </div>
-    <div class="w3-bar w3-teal">
+    <div class="w3-bar w3-teal" id="menu-bar">
     <?php if(isset($_SESSION["username"])){
-      echo "<a href='home.php' class='w3-bar-item w3-button w3-mobile' style='margin-top: 1.5px'>Home</a>";
-      echo "<a href='create_post.php' class='w3-bar-item w3-button w3-mobile' style='margin-top: 1.5px'>Create Post</a>";
-      echo "<a href='manage_posts.php' class='w3-bar-item w3-button w3-mobile' style='margin-top: 1.5px'>Manage Posts</a>";
-      echo "<a href='profile.php' class='w3-bar-item w3-button w3-mobile' style='margin-top: 1.5px'>Profile</a>";
-      echo "<a href='logout.php' class='w3-bar-item w3-button w3-mobile' style='margin-top: 1.5px'>Logout</a>";
+      echo "<a href='home.php' class='w3-bar-item w3-button w3-mobile w3-left-align' style='margin-top: 1.5px'>Home</a>";
+      echo "<a href='create_post.php' class='w3-bar-item w3-button w3-mobile w3-left-align' style='margin-top: 1.5px'>Create Post</a>";
+      echo "<a href='manage_posts.php' class='w3-bar-item w3-button w3-mobile w3-left-align' style='margin-top: 1.5px'>Manage Posts</a>";
+      echo "<a href='profile.php' class='w3-bar-item w3-button w3-mobile w3-left-align' style='margin-top: 1.5px'>Profile</a>";
+      echo "<a href='logout.php' class='w3-bar-item w3-button w3-mobile w3-left-align' style='margin-top: 1.5px'>Logout</a>";
       $current_page = basename($_SERVER['PHP_SELF']);
       if ($current_page === 'home.php') {
         echo "<form class='w3-bar-item w3-right' action='search.php' style='margin: 0px; padding: 0px' method='GET'>";
-        echo "<input type='text' name='q' class='w3-bar-item w3-input' style='margin: 0px' placeholder='Search for any post...' required>";
+        echo "<input type='text' name='q' id='q' class='w3-bar-item w3-input' style='margin: 0px' placeholder='Search for any post...' required>";
         echo "<input type='submit' class='w3-bar-item w3-button w3-teal' value='Search' style='margin: 0.5px'>";
         echo "</form>";
       }
     }
     else{
-      echo "<a href='home.php' class='w3-bar-item w3-button w3-mobile' style='margin-top: 1.5px'>Home</a>";
-      echo "<a href='index.php' class='w3-bar-item w3-button w3-mobile' style='margin-top: 1.5px'>Login</a>";
+      echo "<a href='home.php' class='w3-bar-item w3-button w3-mobile w3-left-align' style='margin-top: 1.5px'>Home</a>";
+      echo "<a href='index.php' class='w3-bar-item w3-button w3-mobile w3-left-align' style='margin-top: 1.5px'>Login</a>";
     }
     ?>
     </div>
